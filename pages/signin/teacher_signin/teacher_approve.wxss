@@ -1,0 +1,7 @@
+.steps-bottom.cu-steps .cu-item .num::before {
+  content: "\e668";
+  font-family: 'iconfont';
+}
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}

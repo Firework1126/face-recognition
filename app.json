@@ -2,13 +2,18 @@
   "pages": [
     "pages/signin/signin",
     "pages/signin/teacher_signin/teacher_signin",
-    "pages/signin/student_signin/student_signin"
+    "pages/signin/student_signin/student_signin",
+    "pages/signin/teacher_signin/teacher_approve"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "课堂签到小助手",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

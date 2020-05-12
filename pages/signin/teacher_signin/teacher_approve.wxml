@@ -1,0 +1,40 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">老师认证</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange"></text> 老师认证
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
+  </view>
+</view>
+<view class="bg-white padding">
+  <view class="cu-steps">
+    <view class="cu-item {{index>num?'':'text-blue'}}" wx:for="{{numList}}" wx:key>
+      <text class="num {{index==4?'err':''}}" data-index="{{index + 1}}"></text> {{item.name}}
+    </view>
+  </view>
+</view>
+<!-- 顶部步骤展示 -->
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      Step{{index+1}}
+    </view>
+  </view>
+</scroll-view>
+<!-- 页面切换 -->
+<view wx:if="{{TabCur == 0}}"> 
+  <view class="cu-form-group margin-top">
+    <view class="title">请选择所在学院</view>
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+        {{index?picker[index]:'学院名称'}}
+        </view>
+      </picker>
+  </view>
+</view>
+
+
