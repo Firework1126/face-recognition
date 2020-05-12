@@ -1,0 +1,8 @@
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+.button{
+  margin: 38rpx 175rpx 10rpx 175rpx;
+}

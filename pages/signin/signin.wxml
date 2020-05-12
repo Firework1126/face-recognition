@@ -1,0 +1,16 @@
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    </view>
+  </swiper-item>
+</swiper>   
+<!-- 首部卡片式轮播 -->
+<view class="box">
+  <view class="button">
+      <button class="cu-btn round bg-{{'purple'}}" bindtap="teacher_navigator">我是老师</button>
+  </view>
+  <view class="button">
+      <button class="cu-btn round bg-{{'blue'}}"  bindtap="student_navigator">我是学生</button>
+  </view>
+</view>
