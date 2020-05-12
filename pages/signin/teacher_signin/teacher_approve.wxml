@@ -36,5 +36,71 @@
       </picker>
   </view>
 </view>
-
-
+<!-- 选择学院 -->
+<view  wx:if="{{TabCur == 1}}">
+ <view class="cu-form-group margin-top">
+		<view class="title">姓名</view>
+		<input placeholder="请务必填写真实姓名，否则认证不通过"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">工号</view>
+		<input placeholder=""></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">密码</view>
+		<input placeholder=""></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">密码</view>
+		<input placeholder="请再输入一次"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">电话</view>
+		<input placeholder="请输入手机号码"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">验证码</view>
+		<input placeholder=""></input>
+		<button class="cu-btn bg-green shadow">获取验证码</button>
+	</view>
+</view>
+<!-- 完善信息 -->
+<view  wx:if="{{TabCur == 2}}">
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			 <text class="hello">身份证上传（可遮挡证件号，仅为确定本人操作)</text>
+		</view>
+		<view class="action">
+			{{imgList.length}}/1
+		</view>
+	</view>
+  	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 上传证件照 -->
+<view  wx:if="{{TabCur == 3}}">
+ <view class="flex-sub text-center">
+   <view class="solid-bottom text-xl padding">
+      <text class="text-black text-bold">点击提交，等待程序猿审核吧！</text>
+   </view>
+  </view>
+</view>

@@ -19,6 +19,7 @@ Page({
     scroll: 0,
     index: null,
     picker: ['人工智能与数据科学学院', '电气工程学院', '材料科学与工程学院','化工学院','机械工程学院','经济管理学院','土木与交通学院','电子信息工程学院','能源与环境工程学院','理学院','建筑与艺术设计学院','马克思主义学院','外国语学院','人文与法律学院','国际教育学院','校本级','其他'],
+    imgList: [],
   },
   numSteps() {
     this.setData({
@@ -41,4 +42,47 @@ Page({
     })
   },
   // 选择学院
+  ViewImage(e) {
+    wx.previewImage({
+      urls: this.data.imgList,
+      current: e.currentTarget.dataset.url
+    });
+  },
+  //图片查看
+  ChooseImage() {
+    wx.chooseImage({
+      count: 1, //默认9
+      sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album','camera'], //从相册选择
+      success: (res) => {
+        if (this.data.imgList.length != 0) {
+          this.setData({
+            imgList: this.data.imgList.concat(res.tempFilePaths)
+          })
+        } else {
+          this.setData({
+            imgList: res.tempFilePaths
+          })
+        }
+      }
+    });
+  },
+  //选择图片
+  DelImg(e) {
+    wx.showModal({
+      title: '恩师',
+      content: '确定要删除这张照片吗？',
+      confirmText: '确定',
+      cancelText: '取消',
+      success: res => {
+        if (res.confirm) {
+          this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+          this.setData({
+            imgList: this.data.imgList
+          })
+        }
+      }
+    })
+  },
+  //删除图片
 })
