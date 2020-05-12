@@ -1,7 +1,6 @@
-// pages/signin/student_signin/student_signin.js
+const app = getApp();
 Page({
   data: {
-
   },
 
 })
