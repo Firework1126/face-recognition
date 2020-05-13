@@ -1,5 +1,27 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-	<view slot="backText">返回</view>
-	<view slot="content">老师登录</view>
-</cu-custom>
-<button bindtap="teacher_approve">没有账号还</button>
+<view class='whole'>
+ <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">老师登录</view>
+  </cu-custom>
+  <!-- 顶部 -->
+  <view class='body'>
+    <form bindsubmit="login"> 
+          <view class='username'>
+            <view class="img">
+                <image src="/images/geren/user.png" style="width:60rpx;height:60rpx;"></image>
+                <input name="studentId"  placeholder='工号'  style="height:60rpx;"></input>
+            </view>
+          </view>
+            <view class='password'>
+              <view class="img">
+                <image src="/images/geren/mima.png" style="width:60rpx;height:60rpx;"></image>
+                <input  bindinput="mima"  style="height:60rpx;" placeholder='密码'     password='true' name="password"></input>
+              </view>
+            </view>
+            <button class="denglu"  style="font-size:29rpx" form-type="submit"  >登陆</button>
+      </form>
+  <!-- 登录与注册 -->
+            <view class="lostpasswd" bindtap="teacher_approve">>>>点我进行老师认证</view>
+  </view>  
+  <!-- 忘记密码 -->     
+</view>

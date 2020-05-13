@@ -3,13 +3,14 @@
     "pages/signin/signin",
     "pages/signin/teacher_signin/teacher_signin",
     "pages/signin/student_signin/student_signin",
-    "pages/signin/teacher_signin/teacher_approve"
+    "pages/signin/teacher_signin/teacher_approve",
+    "pages/signin/student_signin/student_approve"
   ],
   "window": {
-      "navigationBarBackgroundColor": "#39b54a",
-      "navigationBarTitleText": "",
-      "navigationStyle": "custom",
-      "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

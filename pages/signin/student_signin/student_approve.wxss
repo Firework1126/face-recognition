@@ -1,0 +1,9 @@
+.hello{
+  font-size: 27rpx;
+}
+.btn {
+  width: 90%;
+  margin-top: 70rpx;
+  background-color: rgb(7, 141, 18);
+  color: #FFF;
+}

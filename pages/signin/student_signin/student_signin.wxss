@@ -1,0 +1,46 @@
+.body{
+  margin-top: -80rpx;
+}
+.img{
+  display:flex;
+  flex-direction:row;
+  color: #787a78;
+  background-color:white;
+  margin-left: 70rpx;
+  margin-right: 40rpx;
+  height: 70rpx;
+  border: 0px solid rgb(249, 252, 249);
+  border-radius: 10rpx;
+}
+.username{
+  margin-top: 180rpx;
+}
+.password{
+  margin-top: 40rpx;
+}
+.lostpasswd{
+  padding-top: 80rpx;
+  margin-left: 500rpx;
+  font-size: 25rpx;
+  color:rgb(238, 16, 16)
+}
+ .denglu{
+  margin-top: 120rpx;
+  margin-left: 69rpx;
+  margin-right: 50rpx;
+  border-radius:20rpx;
+  background-color: rgb(170, 34, 34);
+  color:white;
+} 
+/* 设置背景 */
+page{
+width:100%;
+height:100%;
+overflow: hidden;
+}
+.whole{
+width:100%;
+height:100%;
+background:-webkit-linear-gradient(left,#0081ff,#1cbbb4);
+background-size: cover;
+}

@@ -1,4 +1,26 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-	<view slot="backText">返回</view>
-	<view slot="content">学生登录</view>
-</cu-custom>
+<view class='whole'>
+  <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">学生登录</view>
+  </cu-custom>
+  <view class='body'>
+    <form bindsubmit="login"> 
+          <view class='username'>
+            <view class="img">
+                <image src="/images/geren/user.png" style="width:60rpx;height:60rpx;"></image>
+                <input name="studentId"  placeholder='学号'  style="height:60rpx;"></input>
+            </view>
+          </view>
+            <view class='password'>
+              <view class="img">
+                <image src="/images/geren/mima.png" style="width:60rpx;height:60rpx;"></image>
+                <input  bindinput="mima"  style="height:60rpx;" placeholder='密码'     password='true' name="password"></input>
+              </view>
+            </view>
+            <button class="denglu"  style="font-size:29rpx" form-type="submit" >登陆</button>
+      </form>
+  <!-- 登录与注册 -->
+            <view class="lostpasswd" bindtap="student_approve">>>>点我进行学生注册</view>
+  </view>  
+  <!-- 忘记密码 --> 
+</view>
