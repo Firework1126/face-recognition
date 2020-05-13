@@ -59,4 +59,4 @@
   </view>
 </view>
 <!-- 图片 -->
-<button class='btn' bindtap='student_regist' >注册</button>
+<button class='btn' bindtap='student_registe' >注册</button>

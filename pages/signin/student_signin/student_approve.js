@@ -49,4 +49,12 @@ Page({
     })
   },
   //删除图片
+  student_registe: function () {
+    wx.showToast({
+      title: '等待中',
+      image: '/images/geren/soccer.png',
+      duration: 2000
+    })
+  }
+  // 学生注册弹窗等待
 })

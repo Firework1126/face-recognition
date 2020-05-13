@@ -7,7 +7,10 @@
     <text class="cuIcon-title text-orange"></text> 老师认证
   </view>
   <view class="action">
-    <button class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 0}}" class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 1}}" class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 2}}" class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 3}}" class="cu-btn bg-green shadow" bindtap="teacher_registe">提交</button>
   </view>
 </view>
 <view class="bg-white padding">
@@ -20,7 +23,7 @@
 <!-- 顶部步骤展示 -->
 <scroll-view scroll-x class="bg-white nav">
   <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{4}}" wx:key  data-id="{{num}}">
       Step{{index+1}}
     </view>
   </view>

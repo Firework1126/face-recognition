@@ -17,3 +17,4 @@
       <button class="cu-btn round bg-{{'blue'}}"  bindtap="student_navigator">我是学生</button>
   </view>
 </view>
+<!-- http://pic.qqtn.com/up/2016-7/2016071115340991662.gif -->

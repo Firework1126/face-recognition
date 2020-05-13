@@ -1,6 +1,5 @@
 const app = getApp();
 Page({
-
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
@@ -24,14 +23,8 @@ Page({
   numSteps() {
     this.setData({
       num: this.data.num == this.data.numList.length - 1 ? 0 : this.data.num + 1,
-      state:this.data.state + 1
-    })
-  },
-  // 状态图改变
-  tabSelect(e) {
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+      scrollLeft: this.data.num * 60,
+      TabCur: this.data.num + 1
     })
   },
   //模块更改
@@ -85,4 +78,12 @@ Page({
     })
   },
   //删除图片
+  teacher_registe:function(){
+    wx.showToast({
+      title: '等待中',
+      image:'/images/geren/trundle.png',
+      duration: 2000
+    })
+  }
+  // 老师认证弹窗等待
 })
