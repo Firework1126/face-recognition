@@ -4,7 +4,9 @@
     "pages/signin/teacher_signin/teacher_signin",
     "pages/signin/student_signin/student_signin",
     "pages/signin/teacher_signin/teacher_approve",
-    "pages/signin/student_signin/student_approve"
+    "pages/signin/student_signin/student_approve",
+    "pages/student_check_in/student_check_in",
+    "pages/teacher_set/teacher_set"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

@@ -8,3 +8,13 @@
 .hello{
   font-size: 27rpx;
 }
+.teacher_btn:not([size='mini'])
+{
+  width: 130%;
+  margin-left:20rpx;
+}
+.teacher_btns:not([size='mini'])
+{
+  width: 185%;
+  margin-left:20rpx;
+}

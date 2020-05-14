@@ -22,12 +22,21 @@ Page({
   },
   numSteps() {
     this.setData({
-      num: this.data.num == this.data.numList.length - 1 ? 0 : this.data.num + 1,
+      num: this.data.num == this.data.numList.length - 1 ? 1 : this.data.num + 1,
       scrollLeft: this.data.num * 60,
       TabCur: this.data.num + 1
     })
   },
-  //模块更改
+  //模块更改(下一步)
+  numSteps_front() {
+    this.setData({
+      num: this.data.num == this.data.numList.length - 1 ? 2 : this.data.num - 1,
+      scrollLeft: this.data.num * 60,
+      TabCur: this.data.num - 1
+    })
+    console.log(this.data.num)
+  },
+  // 模块更改（上一步）
   PickerChange(e) {
     console.log(e);
     this.setData({
@@ -83,6 +92,9 @@ Page({
       title: '等待中',
       image:'/images/geren/trundle.png',
       duration: 2000
+    })
+    wx.navigateTo({
+      url: '../../teacher_set/teacher_set',
     })
   }
   // 老师认证弹窗等待

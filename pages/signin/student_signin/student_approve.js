@@ -55,6 +55,9 @@ Page({
       image: '/images/geren/soccer.png',
       duration: 2000
     })
+    wx.navigateTo({
+      url: '../../student_check_in/student_check_in',
+    })
   }
   // 学生注册弹窗等待
 })

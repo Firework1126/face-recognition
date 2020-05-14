@@ -7,10 +7,14 @@
     <text class="cuIcon-title text-orange"></text> 老师认证
   </view>
   <view class="action">
-    <button  wx:if="{{num == 0}}" class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
-    <button  wx:if="{{num == 1}}" class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
-    <button  wx:if="{{num == 2}}" class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
-    <button  wx:if="{{num == 3}}" class="cu-btn bg-green shadow" bindtap="teacher_registe">提交</button>
+    <button  wx:if="{{num == 1}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps_front">上一步</button>
+    <button  wx:if="{{num == 2}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps_front">上一步</button>
+    <button  wx:if="{{num == 3}}" class="cu-btn teacher_btns bg-green shadow" bindtap="numSteps_front">上一步</button>
+<!-- 上一步操作 -->
+    <button  wx:if="{{num == 0}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 1}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 2}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 3}}" class="cu-btn teacher_btn bg-green shadow" bindtap="teacher_registe">提交</button>
   </view>
 </view>
 <view class="bg-white padding">

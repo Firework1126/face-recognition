@@ -9,4 +9,9 @@ Page({
       url: '../teacher_signin/teacher_approve',
     })
   },
+  teacher_sign_in:function(){
+    wx.navigateTo({
+      url: '../../teacher_set/teacher_set',
+    })
+  }
 })
