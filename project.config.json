@@ -4,13 +4,21 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
-		"coverView": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
@@ -50,6 +58,20 @@
 					"id": -1,
 					"name": "pages/signin/teacher_signin/teacher_approve",
 					"pathName": "pages/signin/teacher_signin/teacher_approve",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/student_check_in/student_check_in",
+					"pathName": "pages/student_check_in/student_check_in",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/signin/student_signin/student_approve",
+					"pathName": "pages/signin/student_signin/student_approve",
 					"scene": null
 				}
 			]

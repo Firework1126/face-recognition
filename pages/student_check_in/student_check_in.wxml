@@ -1,3 +1,4 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
 	<view slot="backText">返回</view>
 </cu-custom>
+<button class="cu-btn round bg-{{'purple'}}" bindtap="student_recognize">点我进行识别签到</button>

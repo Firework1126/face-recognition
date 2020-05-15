@@ -34,11 +34,9 @@ Page({
       scrollLeft: this.data.num * 60,
       TabCur: this.data.num - 1
     })
-    console.log(this.data.num)
   },
   // 模块更改（上一步）
   PickerChange(e) {
-    console.log(e);
     this.setData({
       index: e.detail.value
     })

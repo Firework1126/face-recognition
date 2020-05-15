@@ -36,10 +36,11 @@
 		<input placeholder=""></input>
 		<button class="cu-btn bg-green shadow">获取验证码</button>
 </view>
+<button class='btn' bindtap='student_registe' >注册</button>
 <!-- 基本信息 -->
 <view class="cu-bar bg-white margin-top">
   <view class="action">
-      <text class="hello">最近照片上传（仅为人脸签到比对使用)</text>
+      <text class="hello">最近照片上传（请清晰拍摄脸庞,为人脸签到比对使用)</text>
   </view>
   <view class="action">
     {{imgList.length}}/1
@@ -59,4 +60,4 @@
   </view>
 </view>
 <!-- 图片 -->
-<button class='btn' bindtap='student_registe' >注册</button>
+<button class='btn' bindtap='student_registe_photo' >添加照片</button>

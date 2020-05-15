@@ -5,6 +5,8 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     imgList: [],
+    photo_base64:'',
+    token:''
   },
   ViewImage(e) {
     wx.previewImage({
@@ -17,7 +19,7 @@ Page({
     wx.chooseImage({
       count: 1, //默认9
       sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], //从相册选择
+      sourceType: ['album','camera'], //从相册选择
       success: (res) => {
         if (this.data.imgList.length != 0) {
           this.setData({
@@ -58,6 +60,66 @@ Page({
     wx.navigateTo({
       url: '../../student_check_in/student_check_in',
     })
-  }
+  },
   // 学生注册弹窗等待
+  onLoad:function(){
+    var that = this
+    //进行acess_token获取
+    wx.request({
+      url: 'https://aip.baidubce.com/oauth/2.0/token', //百度云的接口地址
+      data: {
+        grant_type: 'client_credentials',  //默认参数
+        client_id: 'FnrydhHo6kfkc3BC9KIQWvea', //卢春雨百度云人脸识别的API Key
+        client_secret: '5jKSF7BGdm5w6xUaUjYmZBtPaRFxXgNA' //卢春雨百度云人脸识别的Secret Key
+      },
+      header: {
+        'Content-Type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.setData({
+          token: res.data.access_token //获取到token
+        })
+        console.log(that.data.token)
+      }
+    })
+  },
+  //初始化页面
+  student_registe_photo:function(){
+    console.log('我被点击了')
+    var that = this
+    wx.getFileSystemManager().readFile({
+      filePath: this.data.imgList[0], 
+      encoding: "base64",
+      success: res => { 
+        that.setData({
+          photo_base64: res.data
+        })
+        console.log("我请求了")
+      }
+    })
+    //图片转化为base64格式
+    wx.request({
+      url:'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add?access_token='+this.data.token,
+      method:'POST',
+      data:{
+        image: this.data.photo_base64,
+        image_type: 'BASE64',
+        group_id: 'Students', //自己建的用户组id
+        user_id: 185380, //这里储存用户学号
+        quality_control:'LOW',
+        action_type:'REPLACE'
+      },
+      header:{
+        'Content-Type': 'application/json' // 默认值
+      },
+      success(res){
+        console.log(res)
+        wx.showToast({
+          title: '注册成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
+  }
 })
