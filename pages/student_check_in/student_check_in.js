@@ -67,7 +67,11 @@ Page({
           'Content-Type': 'application/json' // 默认值
         },
         success(res){
-          console.log(res)
+          console.log(res.data.result.user_list[0].score.toFixed(2).toString())
+          wx.showModal({
+            title: '人脸识别匹配度',
+            content: res.data.result.user_list[0].score.toFixed(2).toString(),
+          })
         }
       })
     }
