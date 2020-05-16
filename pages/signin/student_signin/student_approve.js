@@ -65,9 +65,9 @@ Page({
       image: '/images/geren/soccer.png',
       duration: 2000
     })
-    // wx.navigateTo({
-    //   url: '../../student_check_in/student_check_in',
-    // })
+    wx.navigateTo({
+      url: '../../student_check_in/student_check_in',
+    })
   },
   // 学生注册弹窗等待
   onLoad:function(){
@@ -93,14 +93,8 @@ Page({
   //初始化页面
   student_registe_photo:function(){
     var that = this
-    wx.getFileSystemManager().readFile({
-      filePath: this.data.imgList[0], 
-      encoding: "base64",
-      success: res => { 
-        that.setData({
-          photo_base64: res.data
-        })
-      }
+    this.setData({
+      photo_base64: wx.getFileSystemManager().readFileSync(this.data.imgList[0], "base64")
     })
     //图片转化为base64格式
     wx.request({

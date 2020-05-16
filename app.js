@@ -20,6 +20,7 @@ App({
     })
   },
   globalData: {
+    camera: 1,
     ColorList: [
       {
         title: '海蓝',

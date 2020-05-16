@@ -1,4 +1,16 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
 	<view slot="backText">返回</view>
 </cu-custom>
-<button class="cu-btn round bg-{{'purple'}}" bindtap="student_recognize">点我进行识别签到</button>
+<camera  wx:if="{{camera == 0}}" device-position="front" class="camera" flash="off" resolution="medium" style="width: 65%; height: 500rpx;"></camera>
+<view class="button">
+  <button class="cu-btn round bg-{{'purple'}}" bindtap="open_camera">打开摄像头</button>
+</view>
+<view class="button">
+  <button class="cu-btn round bg-{{'purple'}}" bindtap="end_camera">关闭摄像头</button>
+</view>
+<view class="button">
+  <button class="cu-btn round bg-{{'purple'}}" bindtap="take_photo">拍照</button>
+</view>
+<view class="button">
+  <button class="cu-btn round bg-{{'purple'}}" bindtap="student_check_in">签到</button>
+</view>

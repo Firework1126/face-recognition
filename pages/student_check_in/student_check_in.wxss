@@ -1,1 +1,6 @@
-/* pages/student_check_in/student_check_in.wxss */
+.button{
+  margin: 38rpx 175rpx 10rpx 175rpx;
+}
+.camera{
+  margin: 38rpx 175rpx 10rpx 120rpx;
+}
