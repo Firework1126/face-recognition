@@ -6,7 +6,9 @@ Page({
     CustomBar: app.globalData.CustomBar,
     imgList: [],
     photo_base64:'',
-    token:''
+    token:'',
+    student_id:'',
+    message:''
   },
   ViewImage(e) {
     wx.previewImage({
@@ -51,15 +53,21 @@ Page({
     })
   },
   //删除图片
-  student_registe: function () {
+  student_registe: function (e) {
+    console.log(e.detail.value.student_id)
+    let index = e.detail.value.student_id
+    this.setData({
+      student_id: index
+    })
+    console.log(this.data.student_id)
     wx.showToast({
       title: '等待中',
       image: '/images/geren/soccer.png',
       duration: 2000
     })
-    wx.navigateTo({
-      url: '../../student_check_in/student_check_in',
-    })
+    // wx.navigateTo({
+    //   url: '../../student_check_in/student_check_in',
+    // })
   },
   // 学生注册弹窗等待
   onLoad:function(){
@@ -79,13 +87,11 @@ Page({
         that.setData({
           token: res.data.access_token //获取到token
         })
-        console.log(that.data.token)
       }
     })
   },
   //初始化页面
   student_registe_photo:function(){
-    console.log('我被点击了')
     var that = this
     wx.getFileSystemManager().readFile({
       filePath: this.data.imgList[0], 
@@ -94,18 +100,17 @@ Page({
         that.setData({
           photo_base64: res.data
         })
-        console.log("我请求了")
       }
     })
     //图片转化为base64格式
     wx.request({
-      url:'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add?access_token='+this.data.token,
+      url:'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add?access_token='+this.data.token,   //请求百度云
       method:'POST',
       data:{
         image: this.data.photo_base64,
         image_type: 'BASE64',
         group_id: 'Students', //自己建的用户组id
-        user_id: 185380, //这里储存用户学号
+        user_id: this.data.student_id, //这里储存用户学号
         quality_control:'LOW',
         action_type:'REPLACE'
       },
@@ -114,12 +119,24 @@ Page({
       },
       success(res){
         console.log(res)
-        wx.showToast({
-          title: '注册成功',
-          icon: 'success',
-          duration: 2000
+        that.setData({
+          message:res.data.error_msg
         })
-      }
+        if (that.data.message == 'SUCCESS') {
+          wx.showToast({
+            title: '注册成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+        if (that.data.message !== 'SUCCESS') {
+          wx.showToast({
+            title: '请再次点击添加',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      },
     })
   }
 })
