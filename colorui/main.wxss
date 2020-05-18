@@ -1157,7 +1157,9 @@ button.icon.lg {
 	animation: cuIcon-spin 1s infinite linear;
 	z-index: -1;
 }
-
+.margin-top-small{
+  margin-top: 10rpx 
+}
 .load-progress {
 	pointer-events: none;
 	top: 0;

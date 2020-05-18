@@ -1,6 +1,52 @@
-.hello{
-  font-size: 27rpx;
+.head{
+  display: flex;
+  flex-direction: row;
 }
+.headlcon{
+  margin:20rpx;
+}
+.login{
+  color:#0808088c;
+  font-size:28rpx;
+  font-weight:600;
+  position:absolute;
+  left:240rpx;
+  margin-top:60rpx;/**账号形式**/
+}
+/* 最上部的个人信息 */
+.hello{
+  font-size: 25rpx;
+}
+/* 调整文字大小 */
+.img{
+  margin-left:30rpx;
+  line-height:120rpx;/**小图标**/
+}
+.name{
+  padding-top:30rpx;
+  padding-left:20rpx;
+  padding-bottom:30rpx;
+  font-size:30rpx;/**图标后字体**/
+}
+.detail{
+  font-size:30rpx;
+  position:absolute;
+  right:20rpx;
+  height:100rpx;
+  line-height:100rpx;
+  color:#888888;
+}
+.line{
+  padding-top:0px;
+  border:2rpx solid rgba(29, 28, 28, 0.8);
+  opacity:0.1;
+}
+.item{
+  display:flex;
+  flex-direction:row;
+  background-color: #ffffff;/**下半部分面板**/
+}
+/* 每一轮的 */
 .btn {
   width: 90%;
   margin-top: 70rpx;
@@ -13,6 +59,6 @@
 }
 .students_set_btn:not([size='mini'])
 {
-  width: 30%;
-  margin-left:300rpx;
+  width: 40%;
+  margin-left:250rpx;
 }

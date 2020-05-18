@@ -8,7 +8,9 @@ Page({
     photo_base64: '',
     token: '',
     student_id: '',
-    message: ''
+    message: '',
+    student_name:"卢春雨",
+    student_id:"185379"
   },
   ViewImage(e) {
     wx.previewImage({
@@ -74,7 +76,7 @@ Page({
     })
   },
   //初始化页面
-  student_registe_photo: function () {
+  student_change_photo: function () {
     var that = this
     this.setData({
       photo_base64: wx.getFileSystemManager().readFileSync(this.data.imgList[0], "base64")
@@ -114,6 +116,11 @@ Page({
           })
         }
       },
+    })
+  },
+  go_student_check_in:function(){
+    wx.navigateTo({
+      url: '../student_check_in/student_check_in',
     })
   }
 })
