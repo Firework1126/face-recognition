@@ -72,6 +72,13 @@
 					"id": -1,
 					"name": "pages/signin/student_signin/student_approve",
 					"pathName": "pages/signin/student_signin/student_approve",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/student_set/student_set",
+					"pathName": "pages/student_set/student_set",
 					"scene": null
 				}
 			]

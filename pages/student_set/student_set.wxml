@@ -1,0 +1,41 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+</cu-custom>
+<view class="cu-item {{menuArrow?'arrow':''}}">
+    <view class="content">
+      <text class="cuIcon-warn text-green"></text>
+      <text class="text-grey">学期</text>
+      <text class="text-grey text-sm">2020--2021春季学期</text>
+    </view>
+</view>
+<!-- 学期 -->
+<view class="cu-item {{menuArrow?'arrow':''}}">
+  <view class="content">
+    <text class="cuIcon-btn text-green"></text>
+    <text class="text-grey">按钮</text>
+      <button class="students_set_btn cu-btn round bg-green shadow">
+    <text class="cuIcon-upload"></text>上传</button>
+  </view>
+</view>
+<!-- 一个月可以更换一次 -->
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+      <text class="hello">更新照片上传（请清晰拍摄脸庞,为人脸签到比对使用)</text>
+  </view>
+  <view class="action">
+    {{imgList.length}}/1
+  </view>
+</view>
+  <view class="cu-form-group">
+  <view class="grid col-4 grid-square flex-sub">
+    <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+      <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>

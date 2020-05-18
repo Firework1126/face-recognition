@@ -53,7 +53,6 @@ Page({
       photo_base64: wx.getFileSystemManager().readFileSync(this.data.src, "base64")
     })
     if (that.data.photo_base64 !== ""){
-    console.log(this.data.photo_base64)
       wx.request({
         url: 'https://aip.baidubce.com/rest/2.0/face/v3/search?access_token=' + that.data.token,
         method:'POST',
@@ -61,13 +60,12 @@ Page({
           image:this.data.photo_base64,
           image_type: 'BASE64',
           group_id_list:'Students', //用户组
-          user_id:185379  //指定id进行比对
+          user_id:185379  //指定id进行比对  此处可用浩宇服务器上的id进行请求
         },
         header: {
           'Content-Type': 'application/json' // 默认值
         },
         success(res){
-          console.log(res.data.result.user_list[0].score.toFixed(2).toString())
           wx.showModal({
             title: '人脸识别匹配度',
             content: res.data.result.user_list[0].score.toFixed(2).toString(),

@@ -1,0 +1,18 @@
+.hello{
+  font-size: 27rpx;
+}
+.btn {
+  width: 90%;
+  margin-top: 70rpx;
+  background-color: rgb(7, 141, 18);
+  color: #FFF;
+}
+.page {
+  height: 100Vh;
+  width: 100vw;
+}
+.students_set_btn:not([size='mini'])
+{
+  width: 30%;
+  margin-left:300rpx;
+}
