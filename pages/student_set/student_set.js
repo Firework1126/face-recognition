@@ -13,7 +13,8 @@ Page({
     year:'', //年份
     season:'', //季节
     month:'',  //按钮的月份
-    btn:'' //上传按钮判断
+    btn:'' ,//上传按钮判断
+    num:''
   },
   ViewImage(e) {
     wx.previewImage({
@@ -95,11 +96,7 @@ Page({
     // 对学期动态说明
    },
   //初始化页面
-  dianji:function(){
-    console.log('点击')
-  },
   student_change_photo: function () {
-    console.log('我被点击了')
     var that = this
     this.setData({
       photo_base64: wx.getFileSystemManager().readFileSync(this.data.imgList[0], "base64")
@@ -138,22 +135,23 @@ Page({
             duration: 2000
           })
         }
+        var myDate = new Date();
+        that.setData({
+          month: myDate.getMonth()
+        })
+        if (that.data.month==that.data.num && that.data.message == 'SUCCESS') {
+          that.setData({
+            btn: true
+          })
+        }
+        else {
+          that.setData({
+            btn: false
+          })
+        }
+    // 实现按钮一月可选择一次
       },
     })
-    var myDate = new Date();
-    this.setData({
-      month: myDate.getMonth()
-    })
-    if (this.data.num == this.data.month){
-      this.setData({
-       btn:true
-      })
-    }
-    else{
-      this.setData({
-        btn: false
-      })
-    }
   },
   go_student_check_in:function(){
     wx.navigateTo({
