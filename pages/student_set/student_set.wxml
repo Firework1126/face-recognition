@@ -20,7 +20,7 @@
   </view>
   <view class="name">学期</view>
   <view class="detail">
-    <text>2018-2019春季学期</text>
+    <text>{{year}}-{{year+1}}{{season}}季学期</text>
   </view>
 </view>
 <!-- 学期 -->
@@ -44,8 +44,8 @@
   </view>
   <view class="name">更新照片</view>
   <view class="detail">
-      <button class="students_set_btn cu-btn round bg-green shadow">
-    <text class="cuIcon-upload" bindtap="student_change_photo"></text>上传</button>
+      <button class="students_set_btn cu-btn round bg-green shadow" bindtap="student_change_photo"  disabled="{{btn}}" >
+    <text class="cuIcon-upload" ></text>上传</button>
   </view>
 </view>
 <!-- 一个月可以更换一次 -->

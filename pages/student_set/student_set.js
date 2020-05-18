@@ -4,13 +4,16 @@ Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
-    imgList: [],
-    photo_base64: '',
-    token: '',
-    student_id: '',
+    imgList: [],  //图片
+    photo_base64: '', //图片为64格式
+    token: '',  //请求头
+    student_id: 185379,  //学生id
     message: '',
     student_name:"卢春雨",
-    student_id:"185379"
+    year:'', //年份
+    season:'', //季节
+    month:'',  //按钮的月份
+    btn:'' //上传按钮判断
   },
   ViewImage(e) {
     wx.previewImage({
@@ -74,9 +77,29 @@ Page({
         })
       }
     })
-  },
+    var myDate = new Date();
+    this.setData({
+      year: myDate.getFullYear(),
+      num: myDate.getMonth()
+    })
+    if (myDate.getMonth()<=7){
+      this.setData({
+        season:'春'
+      }) 
+    }
+    else{
+      this.setData({
+        season: '秋'
+      }) 
+    }
+    // 对学期动态说明
+   },
   //初始化页面
+  dianji:function(){
+    console.log('点击')
+  },
   student_change_photo: function () {
+    console.log('我被点击了')
     var that = this
     this.setData({
       photo_base64: wx.getFileSystemManager().readFileSync(this.data.imgList[0], "base64")
@@ -89,7 +112,7 @@ Page({
         image: this.data.photo_base64,
         image_type: 'BASE64',
         group_id: 'Students', //自己建的用户组id
-        user_id: 185379, //这里储存用户学号
+        user_id: this.data.student_id, //这里储存用户学号
         quality_control: 'LOW',
         action_type: 'UPDATE'
       },
@@ -117,6 +140,20 @@ Page({
         }
       },
     })
+    var myDate = new Date();
+    this.setData({
+      month: myDate.getMonth()
+    })
+    if (this.data.num == this.data.month){
+      this.setData({
+       btn:true
+      })
+    }
+    else{
+      this.setData({
+        btn: false
+      })
+    }
   },
   go_student_check_in:function(){
     wx.navigateTo({
