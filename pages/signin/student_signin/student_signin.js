@@ -11,7 +11,7 @@ Page({
   },
   student_sign_in: function () {
     wx.navigateTo({
-      url: '../../student_check_in/student_check_in',
+      url: '../../student_set/student_set',
     })
   }
 })
