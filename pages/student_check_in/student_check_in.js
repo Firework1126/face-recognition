@@ -39,16 +39,6 @@ Page({
   // 进行拍摄照片
   student_check_in:function(){
     var that = this
-    // wx.getFileSystemManager().readFile({
-    //   filePath: this.data.src,
-    //   encoding: "base64",
-    //   success: res => {
-    //     console.log(res)
-    //     this.setData({
-    //       photo_base64: res.data
-    //     })
-    //   }
-    // })
     this.setData({
       photo_base64: wx.getFileSystemManager().readFileSync(this.data.src, "base64")
     })

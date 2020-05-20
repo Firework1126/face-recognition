@@ -93,6 +93,13 @@
 					"id": -1,
 					"name": "pages/teacher_set/release_sign_in/release_sign_in",
 					"pathName": "pages/teacher_set/release_sign_in/release_sign_in",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/teacher_set/add_students/add_students",
+					"pathName": "pages/teacher_set/add_students/add_students",
 					"scene": null
 				}
 			]

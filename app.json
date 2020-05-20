@@ -8,7 +8,8 @@
     "pages/student_check_in/student_check_in",
     "pages/teacher_set/teacher_set",
     "pages/student_set/student_set",
-    "pages/teacher_set/release_sign_in/release_sign_in"
+    "pages/teacher_set/release_sign_in/release_sign_in",
+    "pages/teacher_set/add_students/add_students"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

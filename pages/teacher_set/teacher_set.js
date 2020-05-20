@@ -9,7 +9,8 @@ Page({
     teacher_name:'耿艳利',
     teacher_id:185380,
     year: '', //年份
-    season: '' //季节
+    season: '' ,//季节
+    course:[]
   },
   onLoad:function(){
     var that = this
@@ -47,22 +48,6 @@ Page({
     }
     // 对学期动态说明
   },
-  new_class:function(){
-    wx.request({
-      url: 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/group/add?access_token=' + this.data.token,   //请求百度云
-      method: 'POST',
-      data: {
-        group_id: 'new_class'
-      },
-      header: {
-        'Content-Type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res)
-      }
-    })
-  },
-  // 创建课程
   add_face:function (){
     wx.request({
       url: 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/copy?access_token=' + this.data.token,   //请求百度云
@@ -104,15 +89,40 @@ Page({
     })
   },
   hideModal(e) {
+    var that=this
     this.setData({
       modalName: null
     })
     if (this.data.teacher_course.indexOf(this.data.teacher_course_new) ==-1){
       this.data.teacher_course.push(this.data.teacher_course_new)
       app.globalData.teacher_course = this.data.teacher_course
-      wx.showToast({
-        title: '课程创建成功',
+      wx.request({
+        url: 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/group/add?access_token=' + this.data.token,   //请求百度云
+        method: 'POST',
+        data: {
+          group_id: this.data.teacher_course_new.value
+        },
+        header: {
+          'Content-Type': 'application/json' // 默认值
+        },
+        success(res) {
+          if (res.data.error_msg == 'SUCCESS'){
+            wx.showToast({
+              title: '课程创建成功',
+            })
+          }else{
+            wx.showToast({
+              title: '课程创建出错',
+              icon: 'none'
+            })
+          }
+        }
       })
+      console.log(app.globalData.teacher_course)
+      for (var i = 0;i<app.globalData.teacher_course.length;i++){
+        this.data.course = this.data.course.push(app.globalData.teacher_course[i].value)
+      }
+      console.log(this.data.course)
     }
     else{
       wx.showToast({
@@ -126,6 +136,12 @@ Page({
     this.setData({
       teacher_course_new: e.detail
     })
-  }
+  },
   // 获取输入框内容
+  add_students:function(){
+    wx.navigateTo({
+      url: '../teacher_set/add_students/add_students',
+    })
+  }
+  // 添加学生跳转
 })

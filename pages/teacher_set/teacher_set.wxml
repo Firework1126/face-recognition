@@ -26,7 +26,7 @@
 <!-- 学期 -->
 <view class="item" bindtap="showModal" data-target="RadioModal">
   <view class="img">
-    <image src="/images/geren/time.png" style="width:40rpx;height:40rpx;"></image>
+    <image src="/images/geren/chuangjian.png" style="width:40rpx;height:40rpx;"></image>
   </view>
   <view class="name">创建课程</view>
   <view class="detail">
@@ -53,9 +53,9 @@
 <!-- 创建课程 -->
 <view class="item" bindtap=''>
   <view class="img">
-    <image src="/images/geren/time.png" style="width:40rpx;height:40rpx;"></image>
+    <image src="/images/geren/tianjia.png" style="width:40rpx;height:40rpx;"></image>
   </view>
-  <view class="name" bindtap="">添加学生</view>
+  <view class="name" bindtap="add_students">添加学生</view>
   <view class="detail">
     <text>></text>
   </view>
@@ -63,7 +63,7 @@
 <!-- 添加学生 -->
 <view class="item" bindtap=''>
   <view class="img">
-    <image src="/images/geren/time.png" style="width:40rpx;height:40rpx;"></image>
+    <image src="/images/geren/fabu.png" style="width:40rpx;height:40rpx;"></image>
   </view>
   <view class="name" bindtap="">发布签到</view>
   <view class="detail">
@@ -73,7 +73,7 @@
 <!-- 发布签到 -->
 <view class="item" bindtap=''>
   <view class="img">
-    <image src="/images/geren/time.png" style="width:40rpx;height:40rpx;"></image>
+    <image src="/images/geren/chakan.png" style="width:40rpx;height:40rpx;"></image>
   </view>
   <view class="name" bindtap="">查看课程</view>
   <view class="detail">

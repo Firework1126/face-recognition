@@ -1,0 +1,12 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">添加学生</view>
+</cu-custom>
+<view class="cu-form-group margin-top">
+    <view class="title">请选择课程</view>
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+        {{index?picker[index]:'学院名称'}}
+        </view>
+      </picker>
+  </view>
