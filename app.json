@@ -7,7 +7,8 @@
     "pages/signin/student_signin/student_approve",
     "pages/student_check_in/student_check_in",
     "pages/teacher_set/teacher_set",
-    "pages/student_set/student_set"
+    "pages/student_set/student_set",
+    "pages/teacher_set/release_sign_in/release_sign_in"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

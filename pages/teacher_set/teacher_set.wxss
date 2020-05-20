@@ -1,0 +1,117 @@
+.head{
+  display: flex;
+  flex-direction: row;
+}
+.headlcon{
+  margin:20rpx;
+}
+.login{
+  color:#0808088c;
+  font-size:28rpx;
+  font-weight:600;
+  position:absolute;
+  left:240rpx;
+  margin-top:60rpx;/**账号形式**/
+}
+/* 最上部的个人信息 */
+.hello{
+  font-size: 25rpx;
+}
+/* 调整文字大小 */
+.img{
+  margin-left:30rpx;
+  line-height:120rpx;/**小图标**/
+}
+.name{
+  padding-top:30rpx;
+  padding-left:20rpx;
+  padding-bottom:30rpx;
+  font-size:30rpx;/**图标后字体**/
+}
+.detail{
+  font-size:30rpx;
+  position:absolute;
+  right:20rpx;
+  height:100rpx;
+  line-height:100rpx;
+  color:#888888;
+}
+.item{
+  display:flex;
+  flex-direction:row;
+  background-color: #ffffff;/**下半部分面板**/
+}
+/*创建课程弹窗样式 */
+.drawer_box {
+  width: 650rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  background: #FAFAFA;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 3px;
+}
+.drawer_title{
+  padding:15px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+}
+.drawer_content {
+  height: 100rpx;
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+.btn_ok{
+  padding: 10px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #E8E8EA;
+  color: #3CC51F;
+}
+.top{
+	padding-top:8px;
+}
+.title {
+	height: 30px;
+	line-height: 30px;
+	width: 160rpx;
+	text-align: center;
+	display: inline-block;
+	font: 300 28rpx/30px "microsoft yahei";
+}
+ 
+.input_base {
+	border: 2rpx solid #ccc;
+	padding-left: 20rpx;
+	margin-right: 40rpx;
+  margin-left: 40rpx;
+}
+.input_h30{
+	height: 60rpx;
+	line-height: 60rpx;
+}
+.input_h60{
+	height: 120rpx;
+}
+.input_view{
+	font: 12px;
+	background: #fff;
+	color:#000;
+	line-height: 60rpx;
+}
+ 
+input {
+	font: 12px "microsoft yahei";
+	background: #fff;
+	color:#000 ;
+}
+radio{
+	margin-right: 20px;
+}
+.grid { display: -webkit-box; display: box; }
+.col-0 {-webkit-box-flex:0;box-flex:0;}
+.col-1 {-webkit-box-flex:1;box-flex:1;}
+.fl { float: left;}
+.fr { float: right;}
+/*创建课程弹窗样式 */

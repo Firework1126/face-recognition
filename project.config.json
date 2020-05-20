@@ -79,6 +79,13 @@
 					"id": -1,
 					"name": "pages/student_set/student_set",
 					"pathName": "pages/student_set/student_set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/teacher_set/teacher_set",
+					"pathName": "pages/teacher_set/teacher_set",
 					"scene": null
 				}
 			]
