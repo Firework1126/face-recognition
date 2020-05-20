@@ -48,24 +48,6 @@ Page({
     }
     // 对学期动态说明
   },
-  add_face:function (){
-    wx.request({
-      url: 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/copy?access_token=' + this.data.token,   //请求百度云
-      method: 'POST',
-      data: {
-        user_id: 185379,
-        src_group_id:'Students',
-        dst_group_id:'183_184_ana_ele'
-      },
-      header: {
-        'Content-Type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res)
-      }
-    })
-  },
-  // 添加人脸
   check_students:function(){
     wx.request({
       url: 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/group/getusers?access_token=' + this.data.token,   //请求百度云
@@ -106,6 +88,7 @@ Page({
           'Content-Type': 'application/json' // 默认值
         },
         success(res) {
+          console.log(res)
           if (res.data.error_msg == 'SUCCESS'){
             wx.showToast({
               title: '课程创建成功',
@@ -118,11 +101,13 @@ Page({
           }
         }
       })
-      console.log(app.globalData.teacher_course)
-      for (var i = 0;i<app.globalData.teacher_course.length;i++){
-        this.data.course = this.data.course.push(app.globalData.teacher_course[i].value)
+    app.globalData.course = [];
+    for (var i = 0; i < app.globalData.teacher_course.length; i++) {
+      if (app.globalData.teacher_course !== '') {
+        let a = app.globalData.course.push(app.globalData.teacher_course[i].value)
       }
-      console.log(this.data.course)
+    }
+
     }
     else{
       wx.showToast({

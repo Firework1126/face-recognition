@@ -51,11 +51,11 @@
   </view>
 </view>
 <!-- 创建课程 -->
-<view class="item" bindtap=''>
+<view class="item" bindtap='add_students'>
   <view class="img">
     <image src="/images/geren/tianjia.png" style="width:40rpx;height:40rpx;"></image>
   </view>
-  <view class="name" bindtap="add_students">添加学生</view>
+  <view class="name" >添加学生</view>
   <view class="detail">
     <text>></text>
   </view>
@@ -81,5 +81,4 @@
   </view>
 </view>
 <!-- 查看课程 -->
-<button bindtap="add_face">添加学生</button>
 <button bindtap="check_students">查看我的学生列表</button>

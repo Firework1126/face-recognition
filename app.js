@@ -21,6 +21,7 @@ App({
   },
   globalData: {
     teacher_course:'',
+    course:'',
     camera: 1,
     ColorList: [
       {
