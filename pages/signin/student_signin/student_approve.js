@@ -97,6 +97,7 @@ Page({
       photo_base64: wx.getFileSystemManager().readFileSync(this.data.imgList[0], "base64")
     })
     //图片转化为base64格式
+    console.log(this.data.photo_base64)
     wx.request({
       url:'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add?access_token='+this.data.token,   //请求百度云
       method:'POST',

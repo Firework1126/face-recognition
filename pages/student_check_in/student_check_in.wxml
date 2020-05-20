@@ -14,3 +14,4 @@
 <view class="button">
   <button class="cu-btn round bg-{{'purple'}}" bindtap="student_check_in">签到</button>
 </view>
+<button bindtap="getLocation">获取位置</button>

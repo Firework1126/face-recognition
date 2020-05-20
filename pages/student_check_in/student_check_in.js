@@ -83,5 +83,27 @@ Page({
         })
       }
     })
-  },
+    
+  },  
+  getLocation:function(){
+    var that=this
+    wx.request({
+      url: 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/get?access_token=' + that.data.token,
+      method: 'POST',
+      data: {
+        user_id: 'new_class4',
+        group_id: 'student'
+      },
+      header: {
+        'Content-Type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log('成功')
+        console.log(res)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  }
 })

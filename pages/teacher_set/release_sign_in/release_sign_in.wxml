@@ -3,3 +3,13 @@
 	<view slot="content">发布签到</view>
 </cu-custom>
 <button bindtap='getLocation'>获取权限</button>
+<view class="cu-form-group margin-top">
+    <view class="title">请选择课程</view>
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+        {{index?picker[index]:'课程名称'}}
+        </view>
+      </picker>
+</view>
+<button bindtap="open_sign_in">开启签到</button>
+<button bindtap="close_sign_in">关闭签到</button>
