@@ -20,6 +20,7 @@ App({
     })
   },
   globalData: {
+    teacher_course:[],
     camera: 1,
     ColorList: [
       {

@@ -1,2 +1,5 @@
-<!--pages/teacher_set/release_sign_in/release_sign_in.wxml-->
-<text>pages/teacher_set/release_sign_in/release_sign_in.wxml</text>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">发布签到</view>
+</cu-custom>
+<button bindtap='getLocation'>获取权限</button>

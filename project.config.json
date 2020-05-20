@@ -86,6 +86,13 @@
 					"id": -1,
 					"name": "pages/teacher_set/teacher_set",
 					"pathName": "pages/teacher_set/teacher_set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/teacher_set/release_sign_in/release_sign_in",
+					"pathName": "pages/teacher_set/release_sign_in/release_sign_in",
 					"scene": null
 				}
 			]

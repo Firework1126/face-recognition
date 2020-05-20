@@ -1,10 +1,11 @@
 const app = getApp();
 Page({
-
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     token: '',  //请求头
+    teacher_course:[],
+    teacher_course_new:'',
     teacher_name:'耿艳利',
     teacher_id:185380,
     year: '', //年份
@@ -106,6 +107,25 @@ Page({
     this.setData({
       modalName: null
     })
+    if (this.data.teacher_course.indexOf(this.data.teacher_course_new) ==-1){
+      this.data.teacher_course.push(this.data.teacher_course_new)
+      app.globalData.teacher_course = this.data.teacher_course
+      wx.showToast({
+        title: '课程创建成功',
+      })
+    }
+    else{
+      wx.showToast({
+        title: '课程创建出错',
+        icon:'none'
+      })
+    }
   },
   // 创建课程
+  getInputValue(e) {
+    this.setData({
+      teacher_course_new: e.detail
+    })
+  }
+  // 获取输入框内容
 })
